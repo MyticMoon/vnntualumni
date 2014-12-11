@@ -1,0 +1,250 @@
+<head>
+  <title>vnntualumni</title>
+</head>
+
+<body>
+  <h1>-=Alumni Gathering Night=-</h1>
+  {{> nameinput}}
+</body>
+
+<template name="nameinput">
+    <div class="container menu">
+      <div class="row">
+        <div class="span2 logo">
+<!--           <img src="img/logo.svg" width="100"> -->
+          <h1>VNNTU</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container hero">
+      <div class="row">
+        <div class="span12 center">
+          <h1>Tell me who you are</h1>
+<!--           <img src="img/title.svg" width="340"> -->
+            {{#if ifThereIsNoName}}
+              <h1>Please enter your name</h1>
+              <input type="text" size=50 class="name">
+              {{/if}}
+              <h1>{{input_name}}</h1>
+          <p>Powered by  <br>Mytic Moon</p>
+        </div>
+      </div>
+    </div>
+  {{#if ifThereIsNoName}}
+  {{else}}
+  {{#if questionNotDone}}
+  {{> questions}}
+  <h1><button class="finish">Finish</button></h1>
+  {{else}}
+
+  <h4>Your team is:</h4>
+  {{calculate_result}}
+  <h4>{{print_result}}</h4>
+  <h1><button class="redo">Redo</button></h1>
+  {{/if}}
+  {{/if}}
+</template>
+  <template name="questions">
+    <div class="container-triangles-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="span2">
+          <ul class="side-list">
+          </ul>
+        </div>
+        <div class="span8">
+          <h3>1)	Bạn thích rau được nấu theo kiểu gì?</h3>
+          <ul class="">
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Luộc cho chín nhừ</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Xào tương Chinsu</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Nấu canh với Knorr</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Hấp nồi cơm điện</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Muối chua đậm đà</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Ăn sống cho tươi, bảo toàn dưỡng chất</label>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+        <div class="span2 screen-title">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-triangles-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="span2">
+          <ul class="side-list">
+          </ul>
+        </div>
+        <div class="span8">
+          <h3>2)	Một ngày bạn ăn rau bao nhiêu lần?</h3>
+          <ul class="">
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Mình thề mình chưa bao giờ chăn, à quên ăn, rau</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Bữa nào cũng ăn vì đó là một phần thiết yếu của cuộc sống</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Ăn khá nhiều, chủ yếu ăn vào bữa trưa và bữa tối</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Lúc ăn lúc không, tùy điều kiện kinh tế cho phép</label>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+        <div class="span2 screen-title">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-triangles-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="span2">
+          <ul class="side-list">
+          </ul>
+        </div>
+        <div class="span8">
+          <h3>3)	Nếu được trồng một loại rau bạn thích, bạn sẽ sẵn sàng chờ bao lâu để tự tay thu hoạch và thưởng thức loại rau đó?</h3>
+          <ul class="">
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Một đêm</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Một tuần, dùng thuốc tăng trưởng cho rau lớn nhanh</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Một tháng, đợi không quá nhanh không quá lâu</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Nửa năm kiên trì bón phân tưới nước</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Chờ bao lâu cũng được, miễn là được nhìn thấy rau trưởng thành là mình vui rồi</label>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+        <div class="span2 screen-title">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-triangles-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="span2">
+          <ul class="side-list">
+          </ul>
+        </div>
+        <div class="span8">
+          <h3>4)	Bạn thích ăn loại rau nào nhất?</h3>
+          <ul class="">
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Các loại củ (e.g. củ cải, cà rốt...)</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Rau ăn lá (e.g. rau dền, rau muống...)</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Rau thơm (e.g. rau răm, tía tô...)</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Rau ăn quả (e.g. dưa leo, bầu bí...)</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Mình rau nào cũng chơi =))</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">I hate veg...</label>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+        <div class="span2 screen-title">
+
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container-triangles-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="span2">
+          <ul class="side-list">
+          </ul>
+        </div>
+        <div class="span8">
+          <h3>5)	Điều gì thôi thúc bạn ăn rau</h3>
+          <ul class="">
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Tại rau ngon</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Ăn để tốt cho sức khỏe thôi chứ không thích lắm</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Mẹ mình ép ăn rau từ bé nên giờ quen rồi</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Mình sinh ra đã là vegetarian</label>
+              </div>
+            </li>
+            <li><div class="checkbox">
+              <label><input type="checkbox" value="">Peer pressure, tập ăn để bằng thiên hạ</label>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+        <div class="span2 screen-title">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </template>
+  
+   
